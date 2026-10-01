@@ -1,4 +1,4 @@
-function Header() {
+function Header({ cartItemCount, cartTotal, onCartClick }) {
     return (
         <header className="site-header">
             <div className="announcement">
@@ -26,11 +26,18 @@ function Header() {
                         Account
                     </button>
 
-                    <button aria-label="Shopping cart">
-                        Cart (0)
-                    </button>
+             <button
+                className="cart-button"
+                onClick={onCartClick}
+            >
+                🛒
+                <span className="cart-count">
+                    ({cartItemCount})
+                </span>
+            </button>
                 </div>
             </div>
+
         </header>
     );
 }

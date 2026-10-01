@@ -1,53 +1,45 @@
-import ProductCard from './ProductCard';
+import ProductCard from "./ProductCard";
 
-const products = [
-    {
-        id: 1,
-        name: 'Essential T-Shirt',
-        category: 'Clothing',
-        price: 999,
-        badge: 'BEST SELLER',
-    },
-    {
-        id: 2,
-        name: 'Everyday Hoodie',
-        category: 'Clothing',
-        price: 1499,
-    },
-    {
-        id: 3,
-        name: 'Classic Backpack',
-        category: 'Accessories',
-        price: 1299,
-        badge: 'NEW',
-    },
-    {
-        id: 4,
-        name: 'Minimal Sneakers',
-        category: 'Footwear',
-        price: 2199,
-    },
-];
+function FeaturedProducts({ onAddToCart }) {
+    const products = [
+        {
+            id: 1,
+            name: "Classic T-Shirt",
+            category: "Clothing",
+            price: 799,
+            image: "/images/tshirt.jpg",
+        },
+        {
+            id: 2,
+            name: "Everyday Backpack",
+            category: "Accessories",
+            price: 1299,
+            image: "/images/backpack.jpg",
+        },
+        {
+            id: 3,
+            name: "Minimal Watch",
+            category: "Accessories",
+            price: 1999,
+            image: "/images/watch.jpg",
+        },
+        {
+            id: 4,
+            name: "Ceramic Mug",
+            category: "Lifestyle",
+            price: 499,
+            image: "/images/mug.jpg",
+        },
+    ];
 
-function FeaturedProducts() {
-    return (
-        <section className="featured section">
-            <div className="section-heading section-heading-row">
-                <div>
-                    <span>OUR PICKS</span>
-                    <h2>Featured products</h2>
-                </div>
-
-                <a href="/shop" className="view-all">
-                    View all →
-                </a>
-            </div>
-
+ return (
+        <section className="featured-section">
             <div className="product-grid">
                 {products.map((product) => (
                     <ProductCard
                         key={product.id}
                         product={product}
+                        onAddToCart={onAddToCart}
                     />
                 ))}
             </div>
@@ -55,4 +47,4 @@ function FeaturedProducts() {
     );
 }
 
-export default FeaturedProducts;    
+export default FeaturedProducts;
